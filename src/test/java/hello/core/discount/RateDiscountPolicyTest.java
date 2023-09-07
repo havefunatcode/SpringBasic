@@ -1,5 +1,6 @@
 package hello.core.discount;
 
+import hello.core.AppConfig;
 import hello.core.member.Grade;
 import hello.core.member.Member;
 import hello.core.member.MemberService;
@@ -10,7 +11,6 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.*;
 
 class RateDiscountPolicyTest  {
-    private static final MemberService memberService= new MemberServiceImpl();
     private static final DiscountPolicy discountPolicy = new RateDiscountPolicy();
 
     @Test
