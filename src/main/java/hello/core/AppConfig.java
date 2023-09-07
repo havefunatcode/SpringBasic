@@ -21,10 +21,15 @@ public class AppConfig {
     }
 
     public OrderService orderService() {
-        return new OrderServiceImpl(memberRepository(), discountPolicy());
+        return new OrderServiceImpl(memberRepository(), rateDiscountPolicy());
     }
 
-    private static DiscountPolicy discountPolicy() {
+    private static DiscountPolicy fixDiscountPolicy() {
         return new FixDiscountPolicy();
     }
+
+    private static DiscountPolicy rateDiscountPolicy() {
+        return new RateDiscountPolicy();
+    }
+
 }
